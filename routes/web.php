@@ -15,7 +15,17 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-
 Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();
 });
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/test', 'HomeController@test');
+Route::get('/json', 'JsonController@base');
+Route::get('/post', 'PostController@view');
+Route::post('/addComment', 'PostController@store');
+//Route::get('/post/create', 'PostController@createComment');
+
+Route::resource('books', 'BooksController');
