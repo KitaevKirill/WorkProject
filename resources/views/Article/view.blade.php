@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-    <a href="/articless">Список</a><br>
+    <a href="/articles">Список</a><br>
     <a href="/articles/create">Добавить статью</a><br>
     <table border="1">
         <tr>

@@ -2,14 +2,13 @@
 
 namespace App\Providers;
 
-use App\Foo;
-use App\Services\Service;
 use Illuminate\Support\ServiceProvider;
+use App\Services\Service;
 
-class AppServiceProvider extends ServiceProvider
+class TestServiceProvider extends ServiceProvider
 {
     /**
-     * Bootstrap any application services.
+     * Bootstrap services.
      *
      * @return void
      */
@@ -19,12 +18,14 @@ class AppServiceProvider extends ServiceProvider
     }
 
     /**
-     * Register any application services.
+     * Register services.
      *
      * @return void
      */
     public function register()
     {
-        //
+        $this->app->singleton(Service::class, function () {
+            return new Service('api-key');
+        });
     }
 }

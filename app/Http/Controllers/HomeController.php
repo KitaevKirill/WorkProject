@@ -2,11 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\Foo;
 use Illuminate\Filesystem\Filesystem;
 use Illuminate\Http\Request;
 use TCG\Voyager\Models\post;
 use App\Comment;
 use App\Book;
+use App\Services\Service;
 
 class HomeController extends Controller
 {
@@ -39,11 +41,26 @@ class HomeController extends Controller
     }
 
 
-    public function servCont($id)
+    public function servCont(Service $service)
     {
-        $book = Book::find($id);
+        dd($service);
 
-        return view('servCont', compact('book'));
+//         $foo = new Foo('2');
+////         $foo = Foo::key('1');
+//
+//        app()->singleton('foo', function () {
+//            return new Foo('1');
+//        });
+//
+//        app()->singleton('service', function () {
+//            return new Service('dsdscds');
+//        });
+
+//        dd(app('App\Services\Service'));
+
+        dd(app('foo'), app('foo'));
+
+        // dd($service);
     }
 
     public function fileSys()//Filesystem $file)
