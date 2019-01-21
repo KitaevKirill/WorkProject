@@ -30,8 +30,10 @@ Route::get('/json', 'JsonController@base');
 Route::get('/post', 'PostController@view');
 Route::post('/addComment', 'PostController@store');
 Route::get('/servCont', 'HomeController@servCont');
+Route::get('/repos', 'HomeController@repos');
 Route::get('/fileSys', 'HomeController@fileSys');
-//Route::get('/post/create', 'PostController@createComment');
+Route::get('/language/{la}', 'HomeController@lang');
+
 
 Route::resource('books', 'BooksController');
 Route::resource('articles', 'ArticlesController');

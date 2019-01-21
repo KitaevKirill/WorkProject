@@ -176,6 +176,7 @@ return [
         App\Providers\RouteServiceProvider::class,
 //        App\Providers\SocialServiceProvider::class,
         App\Providers\TestServiceProvider::class,
+        App\Providers\LanguageProvider::class,
 
         Laravel\Socialite\SocialiteServiceProvider::class,
 

@@ -9,6 +9,8 @@ use TCG\Voyager\Models\post;
 use App\Comment;
 use App\Book;
 use App\Services\Service;
+use App\Repositories\UserRepository;
+use App\Services\Language;
 
 class HomeController extends Controller
 {
@@ -40,7 +42,6 @@ class HomeController extends Controller
         return view('test', compact('comment', 'post')); //['comment' => $comment, 'post' => $post]);
     }
 
-
     public function servCont(Service $service)
     {
         dd($service);
@@ -61,6 +62,16 @@ class HomeController extends Controller
         dd(app('foo'), app('foo'));
 
         // dd($service);
+    }
+
+    public function lang($la, Language $language)
+    {
+        dd($language);
+    }
+
+    public function repos(UserRepository $users)
+    {
+        dd($users);
     }
 
     public function fileSys()//Filesystem $file)

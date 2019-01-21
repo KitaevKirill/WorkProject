@@ -21,5 +21,11 @@
         </div>
     @endif
 
+    <div>
+        {{Auth::user()->id}}
+        {{Auth::user()}}
+        {{Auth::check()}}
+    </div>
+
 
 @endsection
